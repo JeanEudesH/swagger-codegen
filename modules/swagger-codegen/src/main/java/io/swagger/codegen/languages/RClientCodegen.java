@@ -67,7 +67,9 @@ public class RClientCodegen extends DefaultCodegen implements CodegenConfig {
             Arrays.asList(
                 "Integer",
                 "Numeric",
-                "Character")
+                "Character",
+                "object",
+                "file")
             );
 
         instantiationTypes.clear();
@@ -84,12 +86,12 @@ public class RClientCodegen extends DefaultCodegen implements CodegenConfig {
         typeMapping.put("date", "Character");
         typeMapping.put("DateTime", "Character");
         typeMapping.put("password", "Character");
-        typeMapping.put("file", "TODO_FILE_MAPPING");
+        typeMapping.put("file", "file");
         // map binary to string as a workaround
         // the correct solution is to use []byte
         typeMapping.put("binary", "Character");
         typeMapping.put("ByteArray", "Character");
-        typeMapping.put("object", "TODO_OBJECT_MAPPING");
+        typeMapping.put("object", "object");
 
         cliOptions.clear();
         cliOptions.add(new CliOption(CodegenConstants.PACKAGE_NAME, "R package name (convention: lowercase).")
